@@ -1,0 +1,346 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Performance Optimized Animations */
+@keyframes slide-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes count-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-footer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(5%, -5%) scale(1.05);
+  }
+  50% {
+    transform: translate(0, 10%) scale(0.95);
+  }
+  75% {
+    transform: translate(-5%, -5%) scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+/* Optimized Animation Classes */
+.animate-slide-in-top {
+  animation: slide-in-top 0.8s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.8s ease-out 0.5s both;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out 1s both;
+}
+
+.animate-fade-in-up-delay {
+  animation: fade-in-up 0.6s ease-out 1.3s both;
+}
+
+.animate-fade-in-up-2 {
+  animation: fade-in-up 0.8s ease-out 2s both;
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in-up 0.6s ease-out 3.5s both;
+}
+
+.animate-progress-fill {
+  animation: progress-fill 2s ease-out 2.5s both;
+  width: 0%;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-count-up {
+  animation: count-up 0.6s ease-out 4s both;
+}
+
+.animate-slide-in-bottom {
+  animation: slide-in-bottom 0.8s ease-out 4.5s both;
+}
+
+.animate-fade-in-footer {
+  animation: fade-in-footer 0.6s ease-out 5s both;
+}
+
+.animate-fade-in-footer-delayed {
+  animation: fade-in-footer 0.6s ease-out 5.3s both;
+}
+
+.animate-blob {
+  animation: blob 15s ease-in-out infinite;
+}
+
+.animate-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw 2s ease-in-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-ping-slow {
+  animation: ping-slow 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Optimized Particle Styling */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  contain: layout style paint;
+}
+
+.particle {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  border-radius: 50%;
+  animation: float var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+  opacity: 0.6;
+  will-change: transform;
+}
+
+.particle::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, var(--color) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.code-line {
+  position: absolute;
+  white-space: nowrap;
+  animation: slide-in-code 3s ease-out forwards;
+  opacity: 0;
+  will-change: transform, opacity;
+}
