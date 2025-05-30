@@ -22,6 +22,9 @@ export default function ParticleSystem({ mousePosition }: ParticleSystemProps) {
   const animationRef = useRef<number>()
 
   useEffect(() => {
+    // Only run on client
+    if (typeof window === "undefined") return
+
     const canvas = canvasRef.current
     if (!canvas) return
 

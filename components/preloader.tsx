@@ -7,6 +7,9 @@ export default function Preloader() {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
+    // Only run on client
+    if (typeof window === "undefined") return
+
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
