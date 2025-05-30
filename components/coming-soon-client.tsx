@@ -173,7 +173,7 @@ export default function ComingSoonClient() {
             <p className="text-gray-500 text-sm animate-fade-in-footer">© 2025 valentine.dev</p>
             <div className="flex space-x-6 animate-fade-in-footer-delayed">
               <a
-                href="https://github.com/codebyvalentine"
+                href="https://github.com/thevalentinedev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-[#6D5DD3] transition-all duration-300 transform hover:scale-125 hover:rotate-12"
